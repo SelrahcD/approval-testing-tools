@@ -1,7 +1,0 @@
-= Approval Testing Tooling
-
-[%unbreakable]
-[source,xml]
-----
-include::phpunit.xml[tag=tagname]
-----
