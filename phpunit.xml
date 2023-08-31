@@ -3,11 +3,13 @@
         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd"
 >
 
+     tag::tagname[]
     <testsuites>
         <testsuite name="All">
             <directory suffix="Test.php">./src</directory>
         </testsuite>
     </testsuites>
+     end::tagname[]
 
 
 </phpunit>
