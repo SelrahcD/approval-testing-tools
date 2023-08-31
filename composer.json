@@ -2,6 +2,7 @@
     "name": "selrahcd/approval-testing-tools",
     "description": "Tooling for approval testing in PHP",
     "type": "library",
+    "license": "MIT",
     "require-dev": {
         "phpunit/phpunit": "^10.3",
         "phpstan/phpstan": "^1.10"
