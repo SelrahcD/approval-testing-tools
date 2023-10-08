@@ -23,15 +23,12 @@ final class Combination
 
         $result = [];
         foreach ($firstList as $value) {
-            $paramList = [$value];
 
             if ($rightResults === []) {
-                $result[] = $paramList;
+                $result[] = [$value];
             } else {
                 foreach ($rightResults as $rightResult) {
-                    $paramList = array_merge($paramList, $rightResult);
-                    $result[] = $paramList;
-                    $paramList = [$value];
+                    $result[] = array_merge([$value], $rightResult);
                 }
             }
         }
