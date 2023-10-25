@@ -59,7 +59,7 @@ class CombinationTest extends TestCase
             [
                 [1, 'A'],
                 [2, 'A'],
-                ['3', 'A']
+                [3, 'A']
             ]
             ,
             [

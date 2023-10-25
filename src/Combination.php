@@ -23,12 +23,13 @@ final class Combination
 
         $result = [];
         foreach ($firstList as $value) {
+            $key = (string) $value;
 
             if ($rightResults === []) {
-                $result[] = [$value];
+                $result[$key] = [$value];
             } else {
-                foreach ($rightResults as $rightResult) {
-                    $result[] = array_merge([$value], $rightResult);
+                foreach ($rightResults as $rightResultKey => $rightResult) {
+                    $result[$key . ' ' . $rightResultKey] = array_merge([$value], $rightResult);
                 }
             }
         }
