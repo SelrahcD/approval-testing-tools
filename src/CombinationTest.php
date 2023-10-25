@@ -168,6 +168,30 @@ class CombinationTest extends TestCase
      */
     public function generates_all_combinations_based_on_lists_of_values(array $combinations, array $lists): void
     {
-        $this->assertEquals($combinations, Combination::generate(...$lists));
+        $this->assertEquals($combinations, array_values(Combination::generate(...$lists)));
+    }
+
+
+    /**
+     * @test
+     * @dataProvider listToCombinationKeyExamples
+     */
+    public function indexes_the_generated_combinations_by_a_key_indicating_what_combination_is_generated(): void
+    {
+
+        $this->assertEquals(['0'], array_keys(Combination::generate([0])));
+        $this->assertEquals(['1'], array_keys(Combination::generate([1])));
+    }
+
+    public static function listToCombinationKeyExamples(): \Generator
+    {
+        yield [
+            [
+                1
+            ],
+            [
+                [1]
+            ]
+        ];
     }
 }
