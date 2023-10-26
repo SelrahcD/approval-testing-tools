@@ -255,6 +255,42 @@ class CombinationTest extends TestCase
 
         yield [
             [
+                '[]',
+            ],
+            [
+                [[]],
+            ]
+        ];
+
+        yield [
+            [
+                '[A]',
+            ],
+            [
+                [['A']],
+            ]
+        ];
+
+        yield [
+            [
+                '[A, 1]',
+            ],
+            [
+                [['A', 1]],
+            ]
+        ];
+
+        yield [
+            [
+                '[A, 1, true, false, NULL, ObjectWithoutToString, Name from to string]',
+            ],
+            [
+                [['A', 1, true, false, null, new ObjectWithoutToString(), new ObjectWithToString()]],
+            ]
+        ];
+
+        yield [
+            [
                 '1 A',
             ],
             [

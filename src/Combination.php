@@ -46,7 +46,8 @@ final class Combination
             'integer' => (string) $value,
             'double' => (string) $value,
             'NULL' => 'NULL',
-            default => throw new \Exception("Couldn't convert value to string")
+            'array' => static::convertArray($value)
+//            default => throw new \Exception("Couldn't convert value to string")
         };
     }
 
@@ -61,6 +62,16 @@ final class Combination
             return $value->__toString();
         }
         return (new \ReflectionClass($value))->getShortName();
+    }
+
+    private static function convertArray(array $value): string
+    {
+        $res = '[';
+
+        $res .= implode(', ', array_map(fn($x) => static::valueAsString($x), $value));
+
+        $res .= ']';
+        return $res;
     }
 
 }
