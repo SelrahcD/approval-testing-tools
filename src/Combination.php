@@ -41,6 +41,7 @@ final class Combination
     {
         return match (gettype($value)) {
             'boolean' => static::convertBoolean($value),
+            'object' => static::convertObject($value),
             default => (string) $value
         };
     }
@@ -48,6 +49,11 @@ final class Combination
     private static function convertBoolean(bool $value): string
     {
         return $value ? 'true' : 'false';
+    }
+
+    private static function convertObject(mixed $value): string
+    {
+        return (new \ReflectionClass($value))->getShortName();
     }
 
 }

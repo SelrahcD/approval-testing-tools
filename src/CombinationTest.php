@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Selrahcd\ApprovalTestingTools;
 
 use PHPUnit\Framework\TestCase;
+use Selrahcd\ApprovalTestingTools\fixtures\ObjectWithoutToString;
 
 class CombinationTest extends TestCase
 {
@@ -219,6 +220,15 @@ class CombinationTest extends TestCase
             ],
             [
                 [1.8, -1.8],
+            ]
+        ];
+
+        yield [
+            [
+                'ObjectWithoutToString',
+            ],
+            [
+                [new ObjectWithoutToString],
             ]
         ];
 
