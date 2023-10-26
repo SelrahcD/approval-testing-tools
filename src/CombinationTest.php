@@ -176,6 +176,8 @@ class CombinationTest extends TestCase
     /**
      * @test
      * @dataProvider listToCombinationKeyExamples
+     * @param array<list<mixed>> $lists
+     * @param array<list<mixed>> $keys
      */
     public function indexes_the_generated_combinations_by_a_key_indicating_what_combination_is_generated(array $keys, array $lists): void
     {
