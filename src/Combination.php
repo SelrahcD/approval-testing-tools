@@ -45,6 +45,7 @@ final class Combination
             'string' => $value,
             'integer' => (string) $value,
             'double' => (string) $value,
+            'NULL' => 'NULL',
             default => throw new \Exception("Couldn't convert value to string")
         };
     }

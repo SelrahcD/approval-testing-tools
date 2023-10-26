@@ -246,6 +246,15 @@ class CombinationTest extends TestCase
 
         yield [
             [
+                'NULL',
+            ],
+            [
+                [null],
+            ]
+        ];
+
+        yield [
+            [
                 '1 A',
             ],
             [
