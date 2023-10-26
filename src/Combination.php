@@ -23,7 +23,7 @@ final class Combination
 
         $result = [];
         foreach ($firstList as $value) {
-            $key = (string) $value;
+            $key = self::valueAsString($value);
 
             if ($rightResults === []) {
                 $result[$key] = [$value];
@@ -35,6 +35,19 @@ final class Combination
         }
 
         return $result;
+    }
+
+    private static function valueAsString(mixed $value): string
+    {
+        return match (gettype($value)) {
+            'boolean' => static::convertBoolean($value),
+            default => (string) $value
+        };
+    }
+
+    private static function convertBoolean(bool $value): string
+    {
+        return $value ? 'true' : 'false';
     }
 
 }
