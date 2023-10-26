@@ -214,6 +214,16 @@ class CombinationTest extends TestCase
 
         yield [
             [
+                '1.8',
+                '-1.8',
+            ],
+            [
+                [1.8, -1.8],
+            ]
+        ];
+
+        yield [
+            [
                 '1 A',
             ],
             [
