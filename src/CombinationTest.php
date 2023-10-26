@@ -6,6 +6,7 @@ namespace Selrahcd\ApprovalTestingTools;
 
 use PHPUnit\Framework\TestCase;
 use Selrahcd\ApprovalTestingTools\fixtures\ObjectWithoutToString;
+use Selrahcd\ApprovalTestingTools\Fixtures\ObjectWithToString;
 
 class CombinationTest extends TestCase
 {
@@ -231,6 +232,15 @@ class CombinationTest extends TestCase
             ],
             [
                 [new ObjectWithoutToString],
+            ]
+        ];
+
+        yield [
+            [
+                'Name from to string',
+            ],
+            [
+                [new ObjectWithToString],
             ]
         ];
 

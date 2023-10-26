@@ -56,6 +56,9 @@ final class Combination
 
     private static function convertObject(object $value): string
     {
+        if(method_exists($value, '__toString')) {
+            return $value->__toString();
+        }
         return (new \ReflectionClass($value))->getShortName();
     }
 
