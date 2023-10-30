@@ -182,7 +182,6 @@ class CombinationTest extends TestCase
      */
     public function indexes_the_generated_combinations_by_a_key_indicating_what_combination_is_generated(array $keys, array $lists): void
     {
-
         $this->assertEquals($keys, array_keys(Combination::generate(...$lists)));
     }
 
