@@ -1,6 +1,6 @@
 <?php
 
-namespace Selrahcd\ApprovalTestingTools\Fixtures;
+namespace Selrahcd\ApprovalTestingTools\fixtures;
 
 final class ObjectWithToString
 {

@@ -6,7 +6,7 @@ namespace Selrahcd\ApprovalTestingTools;
 
 use PHPUnit\Framework\TestCase;
 use Selrahcd\ApprovalTestingTools\fixtures\ObjectWithoutToString;
-use Selrahcd\ApprovalTestingTools\Fixtures\ObjectWithToString;
+use Selrahcd\ApprovalTestingTools\fixtures\ObjectWithToString;
 
 class CombinationTest extends TestCase
 {
