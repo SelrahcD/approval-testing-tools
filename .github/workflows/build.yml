@@ -2,14 +2,7 @@ name: Build Pipeline
 
 on: [push]
 
-
-
 jobs:
-  install:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
   test:
     runs-on: ubuntu-latest
     strategy:
@@ -18,10 +11,9 @@ jobs:
           - '8.1'
           - '8.2'
           - '8.3'
-    needs:
-      - install
     name: PhpUnit ${{ matrix.php }} ${{ matrix.description }}
     steps:
+      - uses: actions/checkout@v3
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
@@ -34,9 +26,8 @@ jobs:
 
   phpstan:
     runs-on: ubuntu-latest
-    needs:
-      - install
     steps:
-      - uses: "ramsey/composer-install@v2"
+      - uses: actions/checkout@v3
       - name: Run PhpStan
+        uses: php-actions/phpstan@v3
         run: ./vendor/bin/phpstan --error-format=github
