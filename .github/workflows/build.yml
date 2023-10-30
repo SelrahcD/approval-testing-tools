@@ -19,13 +19,15 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           coverage: none
+      - uses: "ramsey/composer-install@v2"
 
   test:
     runs-on: ubuntu-latest
     needs:
       - build
     steps:
-      - uses: "ramsey/composer-install@v1"
+      - name: Print version
+        run: php -v
       - name: Run tests
         run: ./vendor/bin/phpunit
 
