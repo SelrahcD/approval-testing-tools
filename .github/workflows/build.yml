@@ -28,5 +28,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: "ramsey/composer-install@v2"
       - name: Run PhpStan
         uses: php-actions/phpstan@v3
