@@ -1,6 +1,0 @@
-[source,php]
-----
-Combination::generate([1]);
-
- - 0 => [1]
-----

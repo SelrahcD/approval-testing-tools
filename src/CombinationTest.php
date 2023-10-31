@@ -176,7 +176,6 @@ class CombinationTest extends TestCase
         $this->assertEquals($combinations, array_values(Combination::generate(...$lists)));
     }
 
-
     /**
      * @test
      * @dataProvider listToCombinationKeyExamples
@@ -187,6 +186,7 @@ class CombinationTest extends TestCase
     {
         $this->assertEquals($keys, array_keys(Combination::generate(...$lists)));
     }
+
 
     public static function listToCombinationKeyExamples(): \Generator
     {
@@ -374,29 +374,106 @@ class CombinationTest extends TestCase
         ];
     }
 
-
     /**
-     * @dataProvider combinationExamples
+     * @test
+     * @dataProvider combinationExamplesForDocumentation
      */
-    public function test_it_casts_to_json(array $combinations, array $lists)
+    public function generates_combinations(array $lists)
     {
-//        $combinations = Combination::generate($lists);
+        $combinations = Combination::generate(...$lists);
 
         $a = implode(',', array_map(fn($l) => '[' . implode(',', $l) . ']', $lists));
-        array_walk($combinations, function(&$l, $key) {
-            $l = ' - ' .  $key . ' => [' . implode(',', $l) . ']';
-        });
-        $b = implode(PHP_EOL, $combinations);
+        $result = var_export($combinations, true);
 
         $example = <<<EOF
 [source,php]
 ----
 Combination::generate($a);
 
-$b
+$result
 ----
 EOF;
 
         $this->assertMatchesSnapshot($example);
+    }
+
+
+    public static function combinationExamplesForDocumentation()
+    {
+        yield [
+            []
+        ];
+
+        yield [
+            [
+                [1]
+            ]
+        ];
+
+        yield [
+            [
+                [1, 2]
+            ]
+        ];
+
+        yield [
+            [
+                [1],
+                ['A']
+            ]
+        ];
+
+        yield [
+            [
+                [1, 2],
+                ['A']
+            ]
+        ];
+
+        yield [
+            [
+                [1, 2, 3],
+                ['A']
+            ]
+        ];
+
+        yield [
+            [
+                [1, 2],
+                ['A', 'B']
+            ]
+        ];
+
+        yield [
+            [
+                [1, 2],
+                ['A'],
+                ['X']
+            ]
+        ];
+
+        yield [
+            [
+                [1, 2, 3],
+                ['A'],
+                ['X']
+            ]
+        ];
+
+        yield [
+            [
+                [1, 2],
+                ['A', 'B'],
+                ['X']
+            ]
+        ];
+
+        yield [
+            [
+                [1, 2, 3],
+                ['A', 'B', 'C'],
+                ['X', 'Y', 'Z']
+            ]
+        ];
     }
 }
