@@ -1,0 +1,9 @@
+[source,php]
+----
+Combination::generate([1,2],[A,B]);
+
+ - 0 => [1,A]
+ - 1 => [1,B]
+ - 2 => [2,A]
+ - 3 => [2,B]
+----

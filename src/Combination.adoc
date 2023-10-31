@@ -1,0 +1,12 @@
+= Generate Combinations
+
+Use the `Combination::generate` method to generate combinations.
+
+== Examples
+
+include::__snapshots__/CombinationTest__test_it_casts_to_json with data set 2__1.txt[]
+
+include::__snapshots__/CombinationTest__test_it_casts_to_json with data set 5__1.txt[]
+
+include::__snapshots__/CombinationTest__test_it_casts_to_json with data set 9__1.txt[]
+

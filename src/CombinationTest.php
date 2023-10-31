@@ -7,9 +7,12 @@ namespace Selrahcd\ApprovalTestingTools;
 use PHPUnit\Framework\TestCase;
 use Selrahcd\ApprovalTestingTools\fixtures\ObjectWithoutToString;
 use Selrahcd\ApprovalTestingTools\fixtures\ObjectWithToString;
+use Spatie\Snapshots\MatchesSnapshots;
 
 class CombinationTest extends TestCase
 {
+    use MatchesSnapshots;
+
     public static function combinationExamples(): \Generator
     {
         yield [
@@ -369,7 +372,31 @@ class CombinationTest extends TestCase
                 ['X', 'Y', 'Z']
             ]
         ];
+    }
 
 
+    /**
+     * @dataProvider combinationExamples
+     */
+    public function test_it_casts_to_json(array $combinations, array $lists)
+    {
+//        $combinations = Combination::generate($lists);
+
+        $a = implode(',', array_map(fn($l) => '[' . implode(',', $l) . ']', $lists));
+        array_walk($combinations, function(&$l, $key) {
+            $l = ' - ' .  $key . ' => [' . implode(',', $l) . ']';
+        });
+        $b = implode(PHP_EOL, $combinations);
+
+        $example = <<<EOF
+[source,php]
+----
+Combination::generate($a);
+
+$b
+----
+EOF;
+
+        $this->assertMatchesSnapshot($example);
     }
 }
