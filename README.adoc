@@ -1,0 +1,150 @@
+= Approval Testing Tooling
+
+This library provides some tooling to do Approval Testing on top of PHPUnit.
+
+
+== What you can do with it
+
+:leveloffset: +2
+
+= Generate Combinations
+
+`Combination::generate` method creates combinations from multiple list of values.
+
+The method returns an array of combinations and uses a descriptive key for each one of them.
+
+== Examples
+
+[source,php]
+----
+Combination::generate([1,2,3],[A]);
+
+array (
+  '1 A' =>
+  array (
+    0 => 1,
+    1 => 'A',
+  ),
+  '2 A' =>
+  array (
+    0 => 2,
+    1 => 'A',
+  ),
+  '3 A' =>
+  array (
+    0 => 3,
+    1 => 'A',
+  ),
+)
+----
+
+[source,php]
+----
+Combination::generate([1,2],[A,B]);
+
+array (
+  '1 A' =>
+  array (
+    0 => 1,
+    1 => 'A',
+  ),
+  '1 B' =>
+  array (
+    0 => 1,
+    1 => 'B',
+  ),
+  '2 A' =>
+  array (
+    0 => 2,
+    1 => 'A',
+  ),
+  '2 B' =>
+  array (
+    0 => 2,
+    1 => 'B',
+  ),
+)
+----
+
+[source,php]
+----
+Combination::generate([1,2],[X,Y,Z],[A,B]);
+
+array (
+  '1 X A' =>
+  array (
+    0 => 1,
+    1 => 'X',
+    2 => 'A',
+  ),
+  '1 X B' =>
+  array (
+    0 => 1,
+    1 => 'X',
+    2 => 'B',
+  ),
+  '1 Y A' =>
+  array (
+    0 => 1,
+    1 => 'Y',
+    2 => 'A',
+  ),
+  '1 Y B' =>
+  array (
+    0 => 1,
+    1 => 'Y',
+    2 => 'B',
+  ),
+  '1 Z A' =>
+  array (
+    0 => 1,
+    1 => 'Z',
+    2 => 'A',
+  ),
+  '1 Z B' =>
+  array (
+    0 => 1,
+    1 => 'Z',
+    2 => 'B',
+  ),
+  '2 X A' =>
+  array (
+    0 => 2,
+    1 => 'X',
+    2 => 'A',
+  ),
+  '2 X B' =>
+  array (
+    0 => 2,
+    1 => 'X',
+    2 => 'B',
+  ),
+  '2 Y A' =>
+  array (
+    0 => 2,
+    1 => 'Y',
+    2 => 'A',
+  ),
+  '2 Y B' =>
+  array (
+    0 => 2,
+    1 => 'Y',
+    2 => 'B',
+  ),
+  '2 Z A' =>
+  array (
+    0 => 2,
+    1 => 'Z',
+    2 => 'A',
+  ),
+  '2 Z B' =>
+  array (
+    0 => 2,
+    1 => 'Z',
+    2 => 'B',
+  ),
+)
+----
+
+
+:leveloffset: -2
