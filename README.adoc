@@ -13,6 +13,8 @@ This library provides some tooling to do Approval Testing on top of PHPUnit.
 
 The method returns an array of combinations and uses a descriptive key for each one of them.
 
+Use this in a PhpUnit data provider.
+
 == Examples
 
 [source,php]
