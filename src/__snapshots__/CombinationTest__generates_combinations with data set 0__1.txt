@@ -1,7 +1,0 @@
-[source,php]
-----
-Combination::generate();
-
-array (
-)
-----

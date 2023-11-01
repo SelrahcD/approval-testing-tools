@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Selrahcd\ApprovalTestingTools;
+namespace Selrahcd\ApprovalTestingTools\Combination;
+
+use Selrahcd\ApprovalTestingTools\ValuePrinter;
 
 final class Combination
 {

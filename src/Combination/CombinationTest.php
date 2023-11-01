@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Selrahcd\ApprovalTestingTools;
+namespace Selrahcd\ApprovalTestingTools\Combination;
 
 use PHPUnit\Framework\TestCase;
-use Selrahcd\ApprovalTestingTools\fixtures\ObjectWithoutToString;
-use Selrahcd\ApprovalTestingTools\fixtures\ObjectWithToString;
+use Selrahcd\ApprovalTestingTools\Combination\fixtures\ObjectWithoutToString;
+use Selrahcd\ApprovalTestingTools\Combination\fixtures\ObjectWithToString;
 use Spatie\Snapshots\MatchesSnapshots;
 
 class CombinationTest extends TestCase
