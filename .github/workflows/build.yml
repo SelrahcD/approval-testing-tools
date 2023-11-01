@@ -31,3 +31,19 @@ jobs:
       - uses: "ramsey/composer-install@v2"
       - name: Run PhpStan
         uses: php-actions/phpstan@v3
+
+  build-documentation:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Asciidoctor Reducer
+      run: sudo gem install asciidoctor-reducer
+    - name: Build README
+      run: asciidoctor-reducer -o README.adoc README-source.adoc
+    - name: Commit changes to documentation
+      uses: EndBug/add-and-commit@v9
+      with:
+        committer_name: GitHub Actions
+        committer_email: 41898282+github-actions[bot]@users.noreply.github.com
+        message: 'Generate documentation'
+        add: 'README.adoc'
