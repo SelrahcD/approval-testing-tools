@@ -1,6 +1,8 @@
 = Generate Combinations
 
-Use the `Combination::generate` method to generate combinations.
+`Combination::generate` method creates combinations from multiple list of values.
+
+The method returns an array of combinations and uses a descriptive key for each one of them.
 
 == Examples
 

@@ -1,0 +1,19 @@
+[source,php]
+----
+Combination::generate([1,2],[A],[X]);
+
+array (
+  '1 A X' => 
+  array (
+    0 => 1,
+    1 => 'A',
+    2 => 'X',
+  ),
+  '2 A X' => 
+  array (
+    0 => 2,
+    1 => 'A',
+    2 => 'X',
+  ),
+)
+----

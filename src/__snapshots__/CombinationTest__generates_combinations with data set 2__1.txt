@@ -1,0 +1,15 @@
+[source,php]
+----
+Combination::generate([1,2]);
+
+array (
+  1 => 
+  array (
+    0 => 1,
+  ),
+  2 => 
+  array (
+    0 => 2,
+  ),
+)
+----
