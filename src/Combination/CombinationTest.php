@@ -376,9 +376,11 @@ class CombinationTest extends TestCase
 
     /**
      * @test
+     * @group documentation
      * @dataProvider combinationExamplesForDocumentation
+     * @param array<list<mixed>> $lists
      */
-    public function generates_combinations(array $lists)
+    public function generates_combinations(array $lists): void
     {
         $combinations = Combination::generate(...$lists);
 
@@ -398,7 +400,7 @@ EOF;
     }
 
 
-    public static function combinationExamplesForDocumentation()
+    public static function combinationExamplesForDocumentation(): \Generator
     {
 
         yield [

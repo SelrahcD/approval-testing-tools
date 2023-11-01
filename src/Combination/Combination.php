@@ -25,7 +25,7 @@ final class Combination
 
         $result = [];
         foreach ($firstList as $value) {
-            $key = self::valueAsString($value);
+            $key = ValuePrinter::valueAsString($value);
 
             if ($rightResults === []) {
                 $result[$key] = [$value];
@@ -37,29 +37,6 @@ final class Combination
         }
 
         return $result;
-    }
-
-    private static function valueAsString(mixed $value): string
-    {
-        return ValuePrinter::valueAsString($value);
-    }
-
-    private static function convertBoolean(bool $value): string
-    {
-        return ValuePrinter::convertBoolean($value);
-    }
-
-    private static function convertObject(object $value): string
-    {
-        return ValuePrinter::convertObject($value);
-    }
-
-    /**
-     * @param mixed[] $value
-     */
-    private static function convertArray(array $value): string
-    {
-        return ValuePrinter::convertArray($value);
     }
 
 }
