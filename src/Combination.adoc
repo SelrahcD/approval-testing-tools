@@ -8,7 +8,7 @@ The method returns an array of combinations and uses a descriptive key for each 
 
 include::__snapshots__/CombinationTest__generates_combinations with data set 0__1.txt[]
 
-include::__snapshots__/CombinationTest__generates_combinations with data set 5__1.txt[]
+include::__snapshots__/CombinationTest__generates_combinations with data set 1__1.txt[]
 
-include::__snapshots__/CombinationTest__generates_combinations with data set 9__1.txt[]
+include::__snapshots__/CombinationTest__generates_combinations with data set 2__1.txt[]
 

@@ -1,11 +1,27 @@
 [source,php]
 ----
-Combination::generate([1]);
+Combination::generate([1,2],[A,B]);
 
 array (
-  1 => 
+  '1 A' => 
   array (
     0 => 1,
+    1 => 'A',
+  ),
+  '1 B' => 
+  array (
+    0 => 1,
+    1 => 'B',
+  ),
+  '2 A' => 
+  array (
+    0 => 2,
+    1 => 'A',
+  ),
+  '2 B' => 
+  array (
+    0 => 2,
+    1 => 'B',
   ),
 )
 ----

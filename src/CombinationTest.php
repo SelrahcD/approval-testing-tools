@@ -400,35 +400,6 @@ EOF;
 
     public static function combinationExamplesForDocumentation()
     {
-        yield [
-            []
-        ];
-
-        yield [
-            [
-                [1]
-            ]
-        ];
-
-        yield [
-            [
-                [1, 2]
-            ]
-        ];
-
-        yield [
-            [
-                [1],
-                ['A']
-            ]
-        ];
-
-        yield [
-            [
-                [1, 2],
-                ['A']
-            ]
-        ];
 
         yield [
             [
@@ -447,32 +418,8 @@ EOF;
         yield [
             [
                 [1, 2],
-                ['A'],
-                ['X']
-            ]
-        ];
-
-        yield [
-            [
-                [1, 2, 3],
-                ['A'],
-                ['X']
-            ]
-        ];
-
-        yield [
-            [
-                [1, 2],
-                ['A', 'B'],
-                ['X']
-            ]
-        ];
-
-        yield [
-            [
-                [1, 2, 3],
-                ['A', 'B', 'C'],
-                ['X', 'Y', 'Z']
+                ['X', 'Y', 'Z'],
+                ['A', 'B']
             ]
         ];
     }
