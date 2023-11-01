@@ -4,6 +4,8 @@
 
 The method returns an array of combinations and uses a descriptive key for each one of them.
 
+Use this in a PhpUnit data provider.
+
 == Examples
 
 include::__snapshots__/CombinationTest__generates_combinations with data set 0__1.txt[]
