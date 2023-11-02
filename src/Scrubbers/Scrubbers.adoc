@@ -2,7 +2,7 @@
 
 If you are not able to get reproductible output for tests you can use Scrubbers to transform a non-deterministic output to a deterministic.
 
-Scrubbers are tools that takes a string and returns a string. You can combine multiple scrubbers together if
+Scrubbers are tools that takes a string and returns a string. You can combine multiple scrubbers together if needed.
 
 :leveloffset: +1
 
