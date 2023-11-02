@@ -9,5 +9,7 @@ This library provides some tooling to do Approval Testing on top of PHPUnit.
 
 include::src/Combination/Combination.adoc[]
 
+include::src/Scrubbers/Scrubbers.adoc[]
+
 :leveloffset: -2
 

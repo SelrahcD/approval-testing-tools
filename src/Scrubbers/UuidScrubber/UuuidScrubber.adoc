@@ -1,0 +1,35 @@
+= Scrub UUIDs
+
+The `UuidScrubber` replaces all UUID found in a string by a simpler string.
+
+It also ensures that if the same UUID is found multiple times in the same string the same replacement string is used.
+
+== Examples
+
+[%unbreakable]
+[source,php]
+----
+include::UuidScrubberTest.php[tag=removes_uuids_from_string_code]
+----
+
+produces
+
+[%unbreakable]
+----
+include::__snapshots__/UuidScrubberTest__removes_uuids_from_a_string__1.txt[]
+----
+
+The following example shows that multiple occurrences of the same UUID are replaced with the same value :
+
+[%unbreakable]
+[source,php]
+----
+include::UuidScrubberTest.php[tag=reuses_id_for_a_uuid_found_multiple_times]
+----
+
+produces
+
+[%unbreakable]
+----
+include::__snapshots__/UuidScrubberTest__reuses_id_for_a_uuid_found_multiple_times__1.txt[]
+----

@@ -1,0 +1,11 @@
+= Scrub non-deterministic value
+
+If you are not able to get reproductible output for tests you can use Scrubbers to transform a non-deterministic output to a deterministic.
+
+Scrubbers are tools that takes a string and returns a string. You can combine multiple scrubbers together if
+
+:leveloffset: +1
+
+include::UuidScrubber/UuuidScrubber.adoc[]
+
+:leveloffset: -1
