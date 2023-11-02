@@ -149,4 +149,68 @@ array (
 ----
 
 
+= Scrub non-deterministic value
+
+If you are not able to get reproductible output for tests you can use Scrubbers to transform a non-deterministic output to a deterministic.
+
+Scrubbers are tools that takes a string and returns a string. You can combine multiple scrubbers together if
+
+:leveloffset: +1
+
+= Scrub UUIDs
+
+The `UuidScrubber` replaces all UUID found in a string by a simpler string.
+
+It also ensures that if the same UUID is found multiple times in the same string the same replacement string is used.
+
+== Examples
+
+[%unbreakable]
+[source,php]
+----
+        $inputString = <<<EOS
+Here is a 5c2068a8-7213-42f6-81d7-ef3a270d7bd1,
+and here is another one 52276882-9853-4e3d-9e8d-c54c77db03a4
+EOS;
+
+        $uuidScrubber = new UuidScrubber();
+
+        $scrubbedText = $uuidScrubber->scrub($inputString);
+----
+
+produces
+
+[%unbreakable]
+----
+Here is a UUID_0,
+and here is another one UUID_1
+----
+
+The following example shows that multiple occurrences of the same UUID are replaced with the same value :
+
+[%unbreakable]
+[source,php]
+----
+        $inputString = <<<EOS
+Here is a 5c2068a8-7213-42f6-81d7-ef3a270d7bd1,
+and here is another one 52276882-9853-4e3d-9e8d-c54c77db03a4,
+and here is the first one again 5c2068a8-7213-42f6-81d7-ef3a270d7bd1
+EOS;
+
+        $uuidScrubber = new UuidScrubber();
+
+        $scrubbedText = $uuidScrubber->scrub($inputString);
+----
+
+produces
+
+[%unbreakable]
+----
+Here is a UUID_0,
+and here is another one UUID_1,
+and here is the first one again UUID_0
+----
+
+:leveloffset: -1
+
 :leveloffset: -2
