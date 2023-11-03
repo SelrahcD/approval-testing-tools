@@ -1,0 +1,19 @@
+= Scrub using Regex
+
+The `RegexScrubber` replaces all Regex matches with the replacement pattern.
+
+== Example
+
+[%unbreakable]
+[source,php]
+----
+include::RegexScrubberTest.php[tag=replaces_regex_matches_with_a_replacement_string]
+----
+
+produces
+
+[%unbreakable]
+----
+include::__snapshots__/RegexScrubberTest__replaces_regex_matches_with_a_replacement_string__1.txt[]
+----
+

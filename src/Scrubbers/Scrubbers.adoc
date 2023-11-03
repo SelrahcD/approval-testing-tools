@@ -8,4 +8,6 @@ Scrubbers are tools that takes a string and returns a string. You can combine mu
 
 include::UuidScrubber/UuuidScrubber.adoc[]
 
+include::RegexScrubber/RegexScrubber.adoc[]
+
 :leveloffset: -1

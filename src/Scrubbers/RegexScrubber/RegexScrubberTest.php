@@ -56,9 +56,11 @@ class RegexScrubberTest extends TestCase
      */
     public function replaces_regex_matches_with_a_replacement_string(): void
     {
+        // tag::replaces_regex_matches_with_a_replacement_string[]
         $regexScrubber = new RegexScrubber('/\d+/', '[number]');
 
         $scrubbedText = $regexScrubber->scrub('There is 12 cats leaving at the number 10.');
+        // end::replaces_regex_matches_with_a_replacement_string[]
 
         $this->assertMatchesSnapshot($scrubbedText);
     }
