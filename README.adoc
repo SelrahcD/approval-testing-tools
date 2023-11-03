@@ -211,6 +211,28 @@ and here is another one UUID_1,
 and here is the first one again UUID_0
 ----
 
+= Scrub using Regex
+
+The `RegexScrubber` replaces all Regex matches with the replacement pattern.
+
+== Example
+
+[%unbreakable]
+[source,php]
+----
+        $regexScrubber = new RegexScrubber('/\d+/', '[number]');
+
+        $scrubbedText = $regexScrubber->scrub('There is 12 cats leaving at the number 10.');
+----
+
+produces
+
+[%unbreakable]
+----
+There is [number] cats leaving at the number [number].
+----
+
+
 :leveloffset: -1
 
 :leveloffset: -2
