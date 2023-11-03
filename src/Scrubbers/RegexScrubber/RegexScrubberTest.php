@@ -12,7 +12,11 @@ class RegexScrubberTest extends TestCase
 
     use MatchesSnapshots;
 
-    public static function replacementExamples()
+    /**
+     * @return array<array{string, string, string, string}>
+     *
+     */
+    public static function replacementExamples(): array
     {
         return [
             [
