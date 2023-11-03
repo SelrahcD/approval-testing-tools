@@ -12,6 +12,12 @@ final class RegexScrubber
 
     public function scrub(string $inputString): string
     {
-        return preg_replace($this->regexPattern, $this->replacement, $inputString);
+        $scrubbedString = preg_replace($this->regexPattern, $this->replacement, $inputString);
+
+        if($scrubbedString === null) {
+            throw CouldNotScrubUsingRegex::becauseAnErrorOccurred($inputString, $this->regexPattern, $this->replacement);
+        }
+
+        return $scrubbedString;
     }
 }
